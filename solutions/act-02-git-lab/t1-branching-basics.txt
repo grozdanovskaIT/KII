@@ -1,0 +1,20 @@
+$ git branch feature
+
+$ git switch feature
+Switched to branch 'feature'
+
+$ echo "feature change" >> file.txt
+$ git add file.txt
+$ git commit -m "Add change in feature branch"
+[feature abc123] Add change in feature branch
+
+$ git switch main
+Switched to branch 'main'
+
+$ echo "main change" >> file.txt
+$ git add file.txt
+$ git commit -m "Add change in main branch"
+[main def456] Add change in main branch
+
+$ git switch feature
+Switched to branch 'feature'

@@ -1,0 +1,29 @@
+$ git branch feature
+
+$ git switch feature
+Switched to branch 'feature'
+
+$ echo "feature change" >> file.txt
+$ git add file.txt
+$ git commit -m "Add change in feature branch"
+[feature abc123] Add change in feature branch
+ 1 file changed, 1 insertion(+)
+
+$ git switch main
+Switched to branch 'main'
+
+$ echo "main change" >> file.txt
+$ git add file.txt
+$ git commit -m "Add change in main branch"
+[main def456] Add change in main branch
+ 1 file changed, 1 insertion(+)
+
+$ git merge feature
+Updating def456..abc123
+Fast-forward
+ file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git log --oneline --decorate --graph --all
+* abc123 (HEAD -> main, feature) Add change in feature branch
+* def456 Add change in main branch

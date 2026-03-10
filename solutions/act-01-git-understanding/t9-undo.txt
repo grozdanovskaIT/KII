@@ -1,0 +1,24 @@
+ (1) Make a commit with a wrong message then fix it
+
+$ git commit -m "Worng message"
+[main abc123] Worng message
+ 1 file changed, 1 insertion(+)
+
+$ git commit --amend -m "Correct message"
+[main def456] Correct message
+ 1 file changed, 1 insertion(+)
+
+
+(2) Stage a file then unstage it
+
+$ git add file.txt
+
+$ git reset HEAD file.txt
+Unstaged changes after reset
+
+
+(3) Modify a tracked file then discard the modification
+
+$ nano file.txt
+
+$ git restore file.txt
