@@ -1,0 +1,48 @@
+ git branch feature
+
+git switch feature
+Switched to branch 'feature'
+
+echo "feature change" >> file.txt
+PS D:\KII> git add file.txt
+>>  git commit -m "Add change in feature branch"  
+[feature 45a47dd] Add change in feature branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+ git switch main
+ Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+echo "main change" >> file.txt
+git add file.txt
+git commit -m "Add change in main branch"
+
+[main c5252dd] Add change in main branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+ git log --oneline --decorate --graph --all
+ * c5252dd (HEAD -> main) Add change in main branch
+* f82e9b2 (origin/main) Update act-01 and act-02 tasks
+| * 45a47dd (feature) Add change in feature branch
+|/
+* beb2bd8 Add change in feature branch
+* 6765be9 Add t5 remotes task
+* 467651d Add t3 merge task
+* c49bd03 Add t1 branching basics
+
+git switch feature
+Already on 'feature'
+
+git rebase main
+Current branch feature is up to date.
+
+git log --oneline --decorate --graph --all
+* c5252dd (HEAD -> feature, main) Add change in main branch
+* f82e9b2 (origin/main) Update act-01 and act-02 tasks
+* beb2bd8 Add change in feature branch
+* 6765be9 Add t5 remotes task
+* 467651d Add t3 merge task
+* c49bd03 Add t1 branching basics
+* 143fcbe Add t5 and t9 tasks
+* f0450a7 Add t9 undo task
+* 86ba5ba Add t4 version and config
