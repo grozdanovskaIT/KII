@@ -1,0 +1,7 @@
+git remote -v
+origin  https://github.com/grozdanovskaIT/KII.git (fetch)
+origin  https://github.com/grozdanovskaIT/KII.git (push)
+
+git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
