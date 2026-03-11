@@ -1,0 +1,14 @@
+$ git config --global alias.unstage "reset HEAD --"
+
+$ git config --global alias.last "log -1 --oneline"
+
+
+$ git config alias.unstage
+
+reset HEAD --
+
+$ git config alias.last
+log -1 --oneline
+
+$ git last
+68f9650 (HEAD -> main, origin/main) Add t5 tags task
