@@ -1,0 +1,12 @@
+$ git tag -a v1.4 -m "my version 1.4"
+
+$ git show v1.4
+tag v1.4
+Tagger: grozdanovskaIT <grozdanovskasara1@gmail.com>
+Date:   Wed Mar 11 00:57:55 2026 +0100
+
+my version 1.4
+
+commit 2c2236805a87924b5b863c240205ca6723cc57b2 (HEAD -> main, tag: v1.4, origin/main, origin/feature, feature)   
+Author: grozdanovskaIT <grozdanovskasara1@gmail.com>
+Date:   Wed Mar 11 00:35:04 2026 +0100
