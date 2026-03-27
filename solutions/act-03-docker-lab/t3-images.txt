@@ -1,0 +1,26 @@
+PS D:\KII> docker pull nginx:latest
+latest: Pulling from library/nginx
+Digest: sha256:bc45d248c4e1d1709321de61566eb2b64d4f0e32765239d66573666be7f13349
+Status: Image is up to date for nginx:latest
+docker.io/library/nginx:latest
+
+PS D:\KII> docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+nginx                latest    99133eed2307   42 hours ago    161MB
+ubuntu               22.04     8ea4cbcf3a26   4 weeks ago     77.9MB
+ubuntu               latest    bbdabce66f1b   4 weeks ago     78.1MB
+postgres             latest    810c36706d00   15 months ago   435MB
+sara583/static-web   v1        ceae08d4c6c8   20 months ago   169MB
+debian               11-slim   8fcf9ef0b4d8   21 months ago   80.7MB
+ubuntu               <none>    35a88802559d   21 months ago   78.1MB
+PS D:\KII> docker run -d -p 8080:80 nginx:latest
+e57a7a0662c0d8f6f41812886b2fe0cc10c8a09ee4566e42f74f719122e05691
+PS D:\KII> docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
+e57a7a0662c0   nginx:latest   "/docker-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8080->80/tcp   xenodochial_mayer
+
+PS D:\KII> docker stop xenodochial_mayer
+xenodochial_mayer
+
+PS D:\KII> docker rm xenodochial_mayer
+xenodochial_mayer

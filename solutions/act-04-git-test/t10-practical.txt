@@ -1,0 +1,25 @@
+$ echo "first change" >> file.txt
+$ git add file.txt
+$ git commit -m "First commit on main"
+[main 78b02f5] First commit on main
+
+$ echo "second change" >> file.txt
+$ git add file.txt
+$ git commit -m "Second commit on main"
+[main 44a5328] Second commit on main
+
+$ git branch feature
+$ git switch feature
+
+$ echo "feature change" >> file.txt
+$ git add file.txt
+$ git commit -m "Commit on feature branch"
+[feature a3babc4] Commit on feature branch
+
+$ git status -s
+nothing to commit, working tree clean
+
+$ git log --oneline --decorate --graph --all
+* a3babc4 (HEAD -> feature) Commit on feature branch
+| * 44a5328 (main) Second commit on main
+| * 78b02f5 First commit on main

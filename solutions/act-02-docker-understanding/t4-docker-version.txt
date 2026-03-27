@@ -1,0 +1,39 @@
+Command: docker --version
+
+Output:
+Docker version 26.0.0, build 2ae903e
+
+
+Command: docker info
+
+Output:
+Client:
+ Version:    26.0.0
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.13.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.26.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+
+Server:
+ Containers: 9
+  Running: 1
+  Paused: 0
+  Stopped: 8
+ Images: 4
+ Server Version: 26.0.0
+ Storage Driver: overlay2
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Kernel Version: 5.15.153.1-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 12
+ Total Memory: 7.607GiB
+ Name: docker-desktop
+ Docker Root Dir: /var/lib/docker

@@ -1,0 +1,17 @@
+PS D:\KII> docker run --name myubuntu -it ubuntu:22.04 /bin/bash
+root@73e084c1831a:/# exit
+exit
+
+PS D:\KII> docker start myubuntu
+myubuntu
+
+PS D:\KII> docker attach myubuntu
+root@73e084c1831a:/# exit
+exit
+
+PS D:\KII> docker stop myubuntu
+myubuntu
+
+PS D:\KII> docker logs myubuntu
+root@73e084c1831a:/# exit
+exit

@@ -1,0 +1,39 @@
+PS D:\KII> docker pull ubuntu:22.04
+22.04: Pulling from library/ubuntu
+b1cba2e842ca: Downloading  303.9kB/2b1cba2e842ca: Downloading  1.851MB/2b1cba2e842ca: Downloading  3.408MB/2b1cba2e842ca: Downloading  5.882MB/2b1cba2e842ca: Downloading  7.426MB/2b1cba2e842ca: Downloading  10.21MB/2b1cba2e842ca: Downloading  11.14MB/2b1cba2e842ca: Downloading  13.93MB/2b1cba2e842ca: Downloading  17.35MB/2b1cba2e842ca: Downloading  17.97MB/2b1cba2e842ca: Downloading  20.46MB/2b1cba2e842ca: Downloading  23.58MB/2b1cba2e842ca: Downloading  26.36MB/2b1cba2e842ca: Downloading  28.85MB/2b1cba2e842ca: Extracting  327.7kB/29b1cba2e842ca: Extracting  3.277MB/29b1cba2e842ca: Extracting  6.226MB/29b1cba2e842ca: Extracting  8.192MB/29b1cba2e842ca: Pull complete         Digest: sha256:3ba65aa20f86a0fad9df2b2c259c613df006b2e6d0bfcc8a146afb8c525a9751
+Status: Downloaded newer image for ubuntu:22.04
+docker.io/library/ubuntu:22.04
+
+
+PS D:\KII> docker run -it ubuntu:22.04 /bin/bash
+root@f2f16afcd244:/# ls /
+bin   home   libx32  proc  srv  var
+boot  lib    media   root  sys      
+dev   lib32  mnt     run   tmp      
+etc   lib64  opt     sbin  usr      
+root@f2f16afcd244:/# exit
+exit
+PS D:\KII> docker ps -a
+CONTAINER ID   IMAGE                
+   COMMAND                  CREATED          STATUS                     
+  PORTS                    NAMES    
+f2f16afcd244   ubuntu:22.04         
+   "/bin/bash"              24 seconds ago   Exited (0) 5 seconds ago                              quizzical_moser
+ceff6c13a1da   ubuntu               
+   "/bin/bash"              19 hours ago     Exited (127) 19 hours ago                             elated_mccarthy
+4c4aed5badca   35a88802559d         
+   "/bin/bash"              20 hours ago     Exited (127) 20 hours ago                             quizzical_goldstine
+017618e864a0   35a88802559d         
+   "/bin/bash"              20 hours ago     Exited (0) 20 hours ago                               lucid_hawking
+683b4de97bd0   postgres             
+   "docker-entrypoint.s…"   15 months ago    Exited (255) 40 hours ago    0.0.0.0:5432->5432/tcp   wp-lab   
+0533862c6ede   sara583/static-web:v1   "nginx -g 'daemon of…"   20 months ago    Exited (255) 15 months ago   0.0.0.0:5000->80/tcp     static-wev
+6fa949a90e4c   35a88802559d         
+   "/bin/bash"              20 months ago    Exited (255) 15 months ago                            my-ubuntu
+ff8024d83f83   35a88802559d         
+   "/bin/bash"              20 months ago    Exited (137) 20 months ago                            romantic_kepler
+44f244746845   35a88802559d         
+   "/bin/bash"              20 months ago    Exited (0) 20 months ago                              angry_bohr
+3c7554083ced   debian:11-slim          "/bin/bash"              20 months ago    Exited (0) 20 hours ago                               nginx-product-host-i
+33e2dbc208f5   35a88802559d         
+   "/bin/bash"              20 months ago    Exited (0) 20 months ago                              laughing_carver

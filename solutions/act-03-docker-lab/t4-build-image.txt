@@ -1,0 +1,55 @@
+PS D:\KII> mkdir docker-lab
+PS D:\KII> cd docker-lab
+
+PS D:\KII\docker-lab> notepad Dockerfile
+
+FROM nginx:alpine
+RUN echo "Hello from Docker Lab" > /usr/share/nginx/html/index.html
+EXPOSE 80
+
+PS D:\KII\docker-lab> docker build -t docker-lab-nginx:v1 .
+[+] Building 0.0s (0/0)  docker:default
+2026/03/12 17:53:48 http2: server: error reading preface from client //[+] Building 13.0s (7/7) FINISHED                       docker:default
+ => [internal] load build definition from Dockerfile              0.0s
+ => => transferring dockerfile: 134B                              0.0s 
+ => [internal] load metadata for docker.io/library/nginx:alpine   2.4s 
+ => [auth] library/nginx:pull token for registry-1.docker.io      0.0s
+ => [internal] load .dockerignore                                 0.1s
+ => => transferring context: 2B                                   0.0s 
+ => [1/2] FROM docker.io/library/nginx:alpine@sha256:f46cb72c7df  7.6s
+ => => resolve docker.io/library/nginx:alpine@sha256:f46cb72c7df  0.1s 
+ => => sha256:f46cb72c7df02710e693e863a983ac42 10.33kB / 10.33kB  0.0s 
+ => => sha256:d0c7807749103be4b1fcd09378f16ed4 12.32kB / 12.32kB  0.0s 
+ => => sha256:593488f95c358628770935110ccf26bd7b3aba 626B / 626B  0.4s 
+ => => sha256:08fe94b0d1e72fc687840f5696f6e107a8 2.50kB / 2.50kB  0.0s 
+ => => sha256:589002ba0eaed121a1dbf42f6648f29e5b 3.86MB / 3.86MB  1.1s 
+ => => sha256:d2a46166eee6d30856269bbf4ad826481d 1.87MB / 1.87MB  1.7s 
+ => => sha256:e19aff8f2cce9241a3cbb1f501d16d9d76b7f2 952B / 952B  0.9s
+ => => sha256:1549d7aec9620db68aa7a5ea05aa08590d8f46 403B / 403B  1.3s
+ => => extracting sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5  0.4s
+ => => sha256:1f25242adbdb4bf04c16ac9fbe5385a46c 1.21kB / 1.21kB  1.6s
+ => => sha256:c32126d2b96c212b17a4fa8384c2aaf3e3 1.40kB / 1.40kB  1.6s
+ => => sha256:c24026275c332ec39b54c7094c7ce6d9 20.25MB / 20.25MB  5.8s
+ => => extracting sha256:d2a46166eee6d30856269bbf4ad826481d04dd4  0.1s
+ => => extracting sha256:593488f95c358628770935110ccf26bd7b3aba3  0.0s
+ => => extracting sha256:e19aff8f2cce9241a3cbb1f501d16d9d76b7f22  0.0s 
+ => => extracting sha256:1549d7aec9620db68aa7a5ea05aa08590d8f465  0.0s
+ => => extracting sha256:1f25242adbdb4bf04c16ac9fbe5385a46cf0f1f  0.0s
+ => => extracting sha256:c32126d2b96c212b17a4fa8384c2aaf3e3418d4  0.0s 
+ => => extracting sha256:c24026275c332ec39b54c7094c7ce6d97b0dde1  0.8s 
+ => [2/2] RUN echo "Hello from Docker Lab" > /usr/share/nginx/ht  2.2s 
+ => exporting to image                                            0.2s 
+ => => exporting layers                                           0.1s 
+ => => writing image sha256:20fd1cd9a55e21d79ab448c6b48bb9707a1b  0.0s 
+ => => naming to docker.io/library/docker-lab-nginx:v1            0.0s 
+
+PS D:\KII\docker-lab> docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+docker-lab-nginx     v1        20fd1cd9a55e   3 seconds ago   62.2MB   
+nginx                latest    99133eed2307   42 hours ago    161MB    
+ubuntu               22.04     8ea4cbcf3a26   4 weeks ago     77.9MB   
+ubuntu               latest    bbdabce66f1b   4 weeks ago     78.1MB   
+postgres             latest    810c36706d00   15 months ago   435MB    
+sara583/static-web   v1        ceae08d4c6c8   20 months ago   169MB    
+debian               11-slim   8fcf9ef0b4d8   21 months ago   80.7MB   
+ubuntu               <none>    35a88802559d   21 months ago   78.1MB   

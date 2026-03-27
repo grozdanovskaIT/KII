@@ -1,0 +1,25 @@
+PS D:\KII\myimage-task> type Dockerfile
+FROM ubuntu:18.04
+RUN apt-get update
+CMD ["echo", "Hello from my Docker image"]
+
+PS D:\KII\myimage-task> docker build -t myimage:v1 .
+[+] Building 2.7s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile
+ => [internal] load metadata for docker.io/library/ubuntu:18.04
+ => [internal] load .dockerignore
+ => [1/2] FROM docker.io/library/ubuntu:18.04
+ => CACHED [2/2] RUN apt-get update
+ => exporting to image
+ => => writing image sha256:85fc195fc8dd7e8faf57e13730365b17ecd46c33dd15648e21b018d877cfee0a
+ => => naming to docker.io/library/myimage:v1
+
+PS D:\KII\myimage-task> docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+myimage              v1        85fc195fc8dd   19 hours ago    109MB
+ubuntu               latest    bbdabce66f1b   4 weeks ago     78.1MB
+postgres             latest    810c36706d00   15 months ago   435MB
+
+PS D:\KII\myimage-task> docker rmi myimage:v1
+Untagged: myimage:v1
+Deleted: sha256:85fc195fc8dd7e8faf57e13730365b17ecd46c33dd15648e21b018d877cfee0a

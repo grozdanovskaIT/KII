@@ -1,0 +1,57 @@
+PS D:\KII>docker images
+REPOSITORY           TAG       IMAGE ID       CREATED   0c0c0c36706d00   15 months ago   435MB
+sara583/static-web   v1        ceae08d4c6c8   20 months ago   169MB
+debian               11-slim   8fcf9ef0b4d8   21 months ago   80.7MB
+ubuntu               <none>    35a88802559d   21 months ago   78.1MB  
+
+PS D:\KII>docker run -d -p 8081:80 docker-lab-nginx:v1
+325007d851ef38d849e56d541d03759a86950aa55296b3ff65971f923dfd8672
+
+PS D:\KII> docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED         STATUS         PORTS                  NAMES
+325007d851ef   docker-lab-nginx:v1   "/docker-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8081->80/tcp   loving_morse      
+
+PS D:\KII> curl http://localhost:8081
+Hello from Docker Lab
+
+PS D:\KII> docker inspect 325007d851ef
+[
+    {
+        "Id": "325007d851ef38d849e56d541d03759a86950aa55296b3ff65971f923dfd8672",
+        "Created": "2026-03-12T16:57:46.875070169Z",        
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"     
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,  
+            "Paused": false,  
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,    
+            "Pid": 839,       
+            "ExitCode": 0,    
+            "Error": "",      
+            "StartedAt": "2026-03-12T16:57:48.419075042Z",  
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        }
+        
+    }
+]
+PS D:\KII> docker logs 325007d851ef
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh     
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-res#1: 
+start worker processes
+
+PS D:\KII> docker stop 325007d851ef
+325007d851ef
+
+PS D:\KII> docker rm 325007d851ef
+325007d851ef
