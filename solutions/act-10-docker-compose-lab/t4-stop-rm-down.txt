@@ -1,0 +1,28 @@
+docker compose stop
+[+] Stopping 2/2
+ ✔ Container kii-web-1    Stopped
+ ✔ Container kii-redis-1  Stopped
+
+docker compose ps
+NAME          IMAGE     COMMAND                  SERVICE   STATUS         PORTS
+kii-redis-1   redis     "docker-entrypoint.s…"   redis     Exited         6379/tcp
+kii-web-1     nginx     "/docker-entrypoint.…"   web       Exited         0.0.0.0:8080->80/tcp
+
+docker compose rm -f
+Going to remove kii-web-1, kii-redis-1
+ ✔ Container kii-web-1    Removed
+ ✔ Container kii-redis-1  Removed
+
+docker compose up -d
+[+] Running 2/2
+ ✔ Container kii-web-1    Started
+ ✔ Container kii-redis-1  Started
+
+docker compose down
+[+] Running 1/1
+ ✔ Network kii_default Removed
+
+Explanation:
+- docker compose stop: ги стопира контејнерите, но тие остануваат во системот.
+- docker compose rm -f: ги брише стопираните контејнери.
+- docker compose down: ги брише контејнерите, мрежата и ресурсите од проектот.

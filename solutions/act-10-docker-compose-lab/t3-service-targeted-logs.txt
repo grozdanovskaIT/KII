@@ -1,0 +1,19 @@
+docker compose logs web
+web-1  | Configuration complete; ready for start up
+web-1  | nginx/1.29.6
+web-1  | start worker processes
+
+docker compose logs redis
+redis-1  | Starting Redis Server
+redis-1  | Redis version=8.6.1
+redis-1  | Ready to accept connections tcp
+
+docker compose ps
+NAME          IMAGE     COMMAND                  SERVICE   CREATED          STATUS         PORTS
+kii-redis-1   redis     "docker-entrypoint.s…"   redis     15 minutes ago   Up 2 minutes   6379/tcp
+kii-web-1     nginx     "/docker-entrypoint.…"   web       15 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp
+
+Explanation:
+- Name: Името на контејнерот (пример kii-web-1, kii-redis-1).
+- State: Покажува дали контејнерот работи (Up) или е стопиран.
+- Ports: Покажува кои порти се мапирани (пример 8080 на хостот оди кон 80 во контејнерот).

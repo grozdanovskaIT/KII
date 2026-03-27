@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                echo 'Repository cloned successfully'
+            }
+        }
+
+        stage('Build image') {
+            steps {
+                sh 'docker build -t YOUR_DOCKERHUB_USERNAME/jenkins-blueocean-demo:latest .'
+            }
+        }
+
+        stage('Push image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh '''
+                        echo "" | docker login -u "" --password-stdin
+                        docker push YOUR_DOCKERHUB_USERNAME/jenkins-blueocean-demo:latest
+                    '''
+                }
+            }
+        }
+    }
+}

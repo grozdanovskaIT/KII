@@ -1,0 +1,24 @@
+docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-web-1    Started
+ ✔ Container compose-homework-app-redis-1  Started
+
+docker compose logs
+web-1    | Running on http://0.0.0.0:5000
+redis-1  | Ready to accept connections
+
+docker compose logs -f
+web-1    | Running on http://0.0.0.0:5000
+redis-1  | Ready to accept connections
+
+Ctrl+C
+
+docker compose logs web
+web-1    | Running on http://0.0.0.0:5000
+
+docker compose logs redis
+redis-1  | Ready to accept connections
+
+Explanation:
+- Aggregated logs (docker compose logs): се користат кога сакаш да ги видиш сите сервиси заедно и како комуницираат.
+- Single-service logs (docker compose logs web/redis): се користат кога дебагираш конкретен сервис и сакаш фокус само на него.

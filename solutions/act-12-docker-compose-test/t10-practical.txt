@@ -1,0 +1,24 @@
+docker compose version
+Docker Compose version v2.26.1-desktop.1
+
+docker compose up -d
+[+] Running 2/2
+ ✔ Container kii-web-1    Started
+ ✔ Container kii-redis-1  Started
+
+docker compose ps
+NAME          IMAGE     COMMAND                  SERVICE   STATUS         PORTS
+kii-redis-1   redis     "docker-entrypoint.s…"   redis     Up             6379/tcp
+kii-web-1     nginx     "/docker-entrypoint.…"   web       Up             0.0.0.0:8080->80/tcp
+
+docker compose logs
+web-1    | Configuration complete; ready for start up
+web-1    | nginx/1.29.6
+redis-1  | Starting Redis Server
+redis-1  | Ready to accept connections
+
+docker compose down
+[+] Running 3/3
+ ✔ Container kii-web-1    Removed
+ ✔ Container kii-redis-1  Removed
+ ✔ Network kii_default    Removed

@@ -1,0 +1,6 @@
+docker compose version
+Docker Compose version v2.26.1-desktop.1
+
+docker-compose --version
+Docker Compose version v2.26.1-desktop.1
+

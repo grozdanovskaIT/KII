@@ -1,0 +1,33 @@
+docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-web-1    Started
+ ✔ Container compose-homework-app-redis-1  Started
+
+docker compose stop
+[+] Stopping 2/2
+ ✔ Container compose-homework-app-web-1    Stopped
+ ✔ Container compose-homework-app-redis-1  Stopped
+
+docker compose rm -f
+Going to remove compose-homework-app-web-1, compose-homework-app-redis-1
+ ✔ Container compose-homework-app-web-1    Removed
+ ✔ Container compose-homework-app-redis-1  Removed
+
+docker compose ps
+NAME    IMAGE    COMMAND    SERVICE    STATUS    PORTS
+
+docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-web-1    Started
+ ✔ Container compose-homework-app-redis-1  Started
+
+docker compose down
+[+] Running 3/3
+ ✔ Container compose-homework-app-web-1    Removed
+ ✔ Container compose-homework-app-redis-1  Removed
+ ✔ Network compose-homework-app_default    Removed
+
+Explanation:
+- docker compose rm: ги брише стопираните контејнери.
+- rm НЕ ги брише мрежите, volumes или images.
+- docker compose down: ги брише контејнерите, мрежите и проект ресурсите.

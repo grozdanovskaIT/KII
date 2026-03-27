@@ -1,0 +1,36 @@
+1 Full contents of the .gitlab-ci.yml file
+
+stages:
+  - build
+
+build-job:
+  stage: build
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "Logging in to Docker registry"
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - echo "Building Docker image"
+    - docker build -t my-image .
+
+
+2 Names of CI/CD variables configured in GitLab
+
+Variables:
+- DOCKER_USERNAME
+- DOCKER_PASSWORD
+
+
+3 vidence of a pipeline run from the GitLab Pipelines view
+
+Pipeline Status: failed
+Pipeline ID: #2413446093
+Branch: main
+Commit: 76e9e8a4
+Pipeline Description: Fix GitLab CI pipeline
+Job Name Defined in .gitlab-ci.yml: build-job
+
+Note: The pipeline could not complete because GitLab required account verification before allowing pipelines to run.

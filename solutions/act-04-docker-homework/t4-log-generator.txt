@@ -1,0 +1,36 @@
+PS D:\KII> mkdir docker-logs-homework
+
+PS D:\KII> cd docker-logs-homework
+
+PS D:\KII\docker-logs-homework> notepad Dockerfile
+
+FROM alpine
+CMD sh -c 'while true; do echo Docker log entry $(date); sleep 2; done'
+
+PS D:\KII\docker-logs-homework> docker build -t docker-log-generator:v1 .
+
+[+] Building ...
+Successfully built
+Successfully tagged docker-log-generator:v1
+
+PS D:\KII\docker-logs-homework> docker run -d docker-log-generator:v1
+
+c98c14636b5ddb72a2bdab405b70eb23b054be2ee74ad5a4a3bbbfc7ab18c821
+
+PS D:\KII\docker-logs-homework> docker logs c98c14636b5d
+
+Docker log entry Thu Mar 12 22:30:58 UTC 2026
+Docker log entry Thu Mar 12 22:31:00 UTC 2026
+Docker log entry Thu Mar 12 22:31:02 UTC 2026
+
+PS D:\KII\docker-logs-homework> docker logs c98c14636b5d
+
+Docker log entry Thu Mar 12 22:30:58 UTC 2026
+Docker log entry Thu Mar 12 22:31:00 UTC 2026
+Docker log entry Thu Mar 12 22:31:02 UTC 2026
+Docker log entry Thu Mar 12 22:31:04 UTC 2026
+Docker log entry Thu Mar 12 22:31:06 UTC 2026
+
+PS D:\KII\docker-logs-homework> docker stop c98c14636b5d
+
+c98c14636b5d

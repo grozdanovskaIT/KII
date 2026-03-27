@@ -1,0 +1,42 @@
+docker compose up -d
+[+] Running 5/5
+ ✔ Network jenkins-lab_jenkins                Created
+ ✔ Volume "jenkins-lab_jenkins-data"          Created
+ ✔ Volume "jenkins-lab_jenkins-docker-certs"  Created
+ ✔ Container jenkins-blueocean                Started
+ ✔ Container docker                           Started
+
+docker compose ps
+
+NAME                  IMAGE                         COMMAND                  SERVICE             STATUS              PORTS
+docker                docker:dind                   "dockerd-entrypoint…"   docker              Up                  2375/tcp, 0.0.0.0:2376->2376/tcp
+jenkins-blueocean     jenkins/jenkins:lts-jdk17     "/usr/bin/tini -- /u…"  jenkins-blueocean   Up                  0.0.0.0:8081->8080/tcp, 0.0.0.0:50000->50000/tcp
+
+
+docker compose logs
+
+jenkins-blueocean  | Jenkins initial setup is required.
+jenkins-blueocean  | Please use the following password to proceed to installation:
+jenkins-blueocean  | /var/jenkins_home/secrets/initialAdminPassword
+
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. 
+An admin user has been created and a password generated.
+
+Please use the following password to proceed to installation:
+
+d05abfeb400e4eabbfccd394bdeee498
+
+Jenkins URL
+
+http://localhost:8081
+
+docker compose ps
+
+NAME                  IMAGE                         COMMAND                  SERVICE             STATUS              PORTS
+docker                docker:dind                   "dockerd-entrypoint…"   docker              Up                  2375/tcp, 0.0.0.0:2376->2376/tcp
+jenkins-blueocean     jenkins/jenkins:lts-jdk17     "/usr/bin/tini -- /u…"  jenkins-blueocean   Up                  0.0.0.0:8081->8080/tcp, 0.0.0.0:50000->50000/tcp

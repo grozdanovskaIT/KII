@@ -1,0 +1,32 @@
+docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-web-1    Started
+ ✔ Container compose-homework-app-redis-1  Started
+
+docker compose stop
+[+] Stopping 2/2
+ ✔ Container compose-homework-app-web-1    Stopped
+ ✔ Container compose-homework-app-redis-1  Stopped
+
+docker compose ps
+NAME                                   IMAGE                     COMMAND                  SERVICE   STATUS         PORTS
+compose-homework-app-redis-1            redis                     "docker-entrypoint.s…"   redis     Exited         6379/tcp
+compose-homework-app-web-1              jamtur01/composeapp       "python app.py"          web       Exited         0.0.0.0:5000->5000/tcp
+
+docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-web-1    Started
+ ✔ Container compose-homework-app-redis-1  Started
+
+docker compose down
+[+] Running 3/3
+ ✔ Container compose-homework-app-web-1    Removed
+ ✔ Container compose-homework-app-redis-1  Removed
+ ✔ Network compose-homework-app_default    Removed
+
+docker compose ps
+NAME    IMAGE    COMMAND    SERVICE    STATUS    PORTS
+
+Explanation:
+- docker compose stop: ги стопира контејнерите, но тие остануваат (може повторно да се стартуваат).
+- docker compose down: ги брише контејнерите и мрежата, па после нема активни ресурси.

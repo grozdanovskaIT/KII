@@ -1,0 +1,39 @@
+notepad docker-compose.yml
+
+docker-compose.yml
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "5000:5000"
+  redis:
+    image: redis
+
+docker compose up -d
+[+] Running 2/2
+ ✔ Container kii-web-1    Started
+ ✔ Container kii-redis-1  Started
+
+docker compose ps
+NAME          IMAGE     COMMAND                  SERVICE   STATUS         PORTS
+kii-redis-1   redis     "docker-entrypoint.s…"   redis     Up             6379/tcp
+kii-web-1     nginx     "/docker-entrypoint.…"   web       Up             0.0.0.0:5000->5000/tcp
+
+curl localhost:5000
+<html>
+<head><title>Welcome to nginx!</title></head>
+<body>
+<h1>Welcome to nginx!</h1>
+</body>
+</html>
+
+docker compose logs
+web-1    | Configuration complete; ready for start up
+web-1    | nginx/1.29.6
+redis-1  | Starting Redis Server
+redis-1  | Ready to accept connections
+
+docker compose down
+[+] Running 1/1
+ ✔ Network kii_default Removed

@@ -1,0 +1,9 @@
+Workflow Name: CI
+
+Trigger Event: push
+
+Jobs:
+- build
+- test
+
+Run Status: success

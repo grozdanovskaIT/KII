@@ -1,0 +1,33 @@
+mkdir compose-lab
+cd compose-lab
+
+notepad docker-compose.yml
+
+docker-compose.yml
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/composeapp
+  redis:
+    image: redis
+
+docker compose version
+Docker Compose version v2.26.1-desktop.1
+
+docker compose up
+[+] Running 2/2
+ ✔ Container compose-lab-web-1    Started
+ ✔ Container compose-lab-redis-1  Started
+Attaching to web-1, redis-1
+web-1    | nginx/...
+redis-1  | Ready to accept connections
+
+Ctrl+C
+
+[+] Stopping 2/2
+ ✔ Container compose-lab-web-1    Stopped
+ ✔ Container compose-lab-redis-1  Stopped
