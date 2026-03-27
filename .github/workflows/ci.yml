@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-  pull_request:
 
 jobs:
   build:
@@ -11,11 +10,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Say hello
-        run: echo "Hello from GitHub Actions"
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run test step
-        run: echo "Running tests"
+      - name: List repository files
+        run: ls -l
