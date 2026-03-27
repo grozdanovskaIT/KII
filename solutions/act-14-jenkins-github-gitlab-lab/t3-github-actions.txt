@@ -1,0 +1,49 @@
+1 Full contents of the GitHub Actions workflow YAML file stored in .github/workflows/ci.yml
+
+name: CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: List repository files
+        run: ls -l
+
+
+2 Workflow requirements
+
+Trigger:
+- push
+
+Job:
+- build
+
+Runner:
+- ubuntu-latest
+
+Steps:
+- uses: actions/checkout@v4
+- run: ls -l
+
+
+3 Names of GitHub Secrets added to the repository
+
+Secrets:
+- MY_SECRET
+
+
+4 Evidence of a workflow run from the Actions tab
+
+Workflow Name: CI
+Run Status: success
+Job Status: success
+Duration: 9s
+Branch: feature
+Actor: grozdanovskaIT
+Run Description: Update GitHub Actions workflow
